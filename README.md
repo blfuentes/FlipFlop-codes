@@ -17,7 +17,7 @@ https://flipflop.slome.org/
 🩴🦶🦶🦶🦶🦶🦶(1/7)
 
 |Day      | Solution |
-|---------|----|----|----|
+|---------|----|
 | Puzzle 01 [Banana Contest ~ Uneven Bunch ~ Deprecation!] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle01/Puzzle01.fs) |
 | Puzzle 02 [Rollercoaster Heights ~ ? ~ ? ] |  |
 | Puzzle 03 [Bush Salesman ~ ? ~ ? ] |  |
