@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -6,18 +6,31 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Include="LocalHelper.fs" />
-		<Content Include="puzzle01/*.txt">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="puzzle02/*.txt">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>	
+
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="puzzle01/Puzzle01.fs" />
-		<Content Include="puzzle02\input.txt" />
+		<Compile Include="LocalHelper.fs" />
+		<Compile Include="puzzle01\Puzzle01.fs" />
+		<Content Include="puzzle01\puzzle01_test.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="puzzle01\input.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 		<Compile Include="puzzle02\Puzzle02.fs" />
+		<Content Include="puzzle02\puzzle02_test.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="puzzle02\input.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Compile Include="puzzle03\Puzzle03.fs" />
+		<Content Include="puzzle03\puzzle03_test.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="puzzle03\input.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 		<Compile Include="Program.fs" />
 	</ItemGroup>
 

@@ -17,4 +17,4 @@ int(Math.Round(float(content |> Array.sum) / float(content.Length), 1, MidpointR
 // Part 3
 let mostFrequentNumber = content |> Array.groupBy id |> Array.sortByDescending (fun (_, group) -> group.Length) |> Array.head |> fst
 let leastFrequentDigit = File.ReadAllText(filepath) |> Seq.groupBy id |> Seq.sortBy (fun (_, group) -> Seq.length group) |> Seq.head |> fst
-printfn "Demo part3: %d" (mostFrequentNumber * 10 + int leastFrequentDigit - int '0')
+printfn "Demo part 3: %d" (mostFrequentNumber * 10 + int leastFrequentDigit - int '0')
