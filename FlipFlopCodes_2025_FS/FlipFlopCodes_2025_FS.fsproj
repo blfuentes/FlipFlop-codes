@@ -4,10 +4,6 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
-
-	<ItemGroup>
-
-	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="LocalHelper.fs" />
 		<Compile Include="puzzle01\Puzzle01.fs" />
@@ -29,6 +25,13 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="puzzle03\input.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Compile Include="puzzle04\Puzzle04.fs" />
+		<Content Include="puzzle04\puzzle04_test.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="puzzle04\input.txt">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Compile Include="Program.fs" />

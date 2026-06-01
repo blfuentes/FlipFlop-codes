@@ -1,11 +1,9 @@
-﻿open Puzzle01
-
-[<EntryPoint>]
+﻿[<EntryPoint>]
 let main argv =
     // Puzzle 01
-    printfn "Puzzle 01 - Part 1: %d" SolvePart1
-    printfn "Puzzle 01 - Part 2: %d" SolvePart2
-    printfn "Puzzle 01 - Part 3: %d" SolvePart3
+    printfn "Puzzle 01 - Part 1: %d" Puzzle01.SolvePart1
+    printfn "Puzzle 01 - Part 2: %d" Puzzle01.SolvePart2
+    printfn "Puzzle 01 - Part 3: %d" Puzzle01.SolvePart3
 
 
     // Puzzle 02
@@ -17,6 +15,11 @@ let main argv =
     printfn "Puzzle 03 - Part 1: %s" Puzzle03.SolvePart1
     printfn "Puzzle 03 - Part 2: %d" Puzzle03.SolvePart2
     printfn "Puzzle 03 - Part 3: %d" Puzzle03.SolvePart3
+
+    // Puzzle 04
+    printfn "Puzzle 04 - Part 1: %d" Puzzle04.SolvePart1
+    printfn "Puzzle 04 - Part 2: %d" Puzzle04.SolvePart2
+    printfn "Puzzle 04 - Part 3: %d" Puzzle04.SolvePart3
 
     // End of program
     printfn "Press any key to exit..."
