@@ -11,7 +11,7 @@ content |> Array.sum
 |> printfn "Demo part 1: %d"
 
 // Part 2
-int(Math.Round(float(content |> Array.sum) / float(content.Length), 1, MidpointRounding.AwayFromZero))
+int(Math.Round(float(content |> Array.sum) / float(content.Length), 0, MidpointRounding.AwayFromZero))
 |> printfn "Demo part 2: %d"
 
 // Part 3

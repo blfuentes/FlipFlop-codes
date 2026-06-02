@@ -31,6 +31,11 @@ let main argv =
     printfn "Puzzle 06 - Part 2: %d" Puzzle06.SolvePart2
     printfn "Puzzle 06 - Part 3: %d" Puzzle06.SolvePart3
 
+    // Puzzle 07
+    printfn "Puzzle 07 - Part 1: %d" Puzzle07.SolvePart1
+    printfn "Puzzle 07 - Part 2: %d" Puzzle07.SolvePart2
+    printfn "Puzzle 07 - Part 3: %A" Puzzle07.SolvePart3
+
     // End of program
     printfn "Press any key to exit..."
     System.Console.ReadKey() |> ignore

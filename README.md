@@ -9,12 +9,20 @@ https://flipflop.slome.org/
 
 | Year  | Progress | Score |
 | - | - | - |
-| [2025](#2025) | 🩴🩴🩴🩴🩴🩴🦶 | 18/21 |
+| [Demo](#Demo) | 🩴 | 3/3 |
+| [2025](#2025) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
+
+### Demo
+https://flipflop.slome.org/2025/demo   
+🩴(1/1)
+|Day      | Solution |
+|---------|----|
+| Demo [Grandma's lost password ~ Just average! ~ Credit card troubles!] | 🐾 [F#](./FlipFlopCodes_Demo/Program.fs) |
 
 ### 2025
 
 [https://flipflop.slome.org/2025](https://flipflop.slome.org/2025)   
-🩴🩴🩴🩴🩴🩴🦶(6/7)
+🩴🩴🩴🩴🩴🩴🩴(7/7)
 
 |Day      | Solution |
 |---------|----|
@@ -24,4 +32,4 @@ https://flipflop.slome.org/
 | Puzzle 04 [Beach Cleanup ~ Faster Path ~ Making Up Your Own Rules ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle04/Puzzle04.fs) |
 | Puzzle 05 [Strange Tunnels ~ Unused Tunnels ~ Powered Tunnels ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle05/Puzzle05.fs) |
 | Puzzle 06 [Bird Spotters ~ Bird Marathon ~ Immortal Birds ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle06/Puzzle06.fs) |
-| Puzzle 07 [Hyper Grids ~ ? ~ ? ] |  |
+| Puzzle 07 [Hyper Grids ~ Stepping into the Third Dimension ~ Infinite Dimensions! ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle07/Puzzle07.fs) |
