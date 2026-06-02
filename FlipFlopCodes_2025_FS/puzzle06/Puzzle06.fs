@@ -30,7 +30,7 @@ let SolvePart1 =
         birdSpeeds
         |> Seq.map (fun (vx, vy) -> calculateBirdPosition 0 0 vx vy second skyX skyY)
     positions
-    |> Seq.filter(fun (bx, by) -> bx >= minX && bx <= maxX && by >= minY && by <= maxY)
+    |> Seq.filter(fun (bx, by) -> bx >= minX && bx < maxX && by >= minY && by < maxY)
     |> Seq.length
 
 // Part 2
@@ -47,7 +47,7 @@ let SolvePart2 =
     let birdsOnHour hour =
         birdSpeeds
         |> Seq.map (fun (vx, vy) -> calculateBirdPosition 0 0 vx vy (hour * 3600) skyX skyY)
-        |> Seq.filter(fun (bx, by) -> bx >= minX && bx <= maxX && by >= minY && by <= maxY)
+        |> Seq.filter(fun (bx, by) -> bx >= minX && bx < maxX && by >= minY && by < maxY)
         |> Seq.length
 
     [1..1000]
@@ -67,7 +67,7 @@ let SolvePart3 =
     let birdsOnYear year =
         birdSpeeds
         |> Seq.map (fun (vx, vy) -> calculateBirdPositionBig 0 0 vx vy ((int64 year) * 31556926L) skyX skyY)
-        |> Seq.filter(fun (bx, by) -> bx >= minX && bx <= maxX && by >= minY && by <= maxY)
+        |> Seq.filter(fun (bx, by) -> bx >= minX && bx < maxX && by >= minY && by < maxY)
         |> Seq.length
 
     [1..1000]

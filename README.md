@@ -9,12 +9,12 @@ https://flipflop.slome.org/
 
 | Year  | Progress | Score |
 | - | - | - |
-| [2025](#2025) | 🩴🩴🩴🩴🩴👢🦶 | 17/21 |
+| [2025](#2025) | 🩴🩴🩴🩴🩴🩴🦶 | 18/21 |
 
 ### 2025
 
 [https://flipflop.slome.org/2025](https://flipflop.slome.org/2025)   
-🩴🩴🩴🩴🩴👢🦶(5.66/7)
+🩴🩴🩴🩴🩴🩴🦶(6/7)
 
 |Day      | Solution |
 |---------|----|
