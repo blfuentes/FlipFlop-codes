@@ -23,7 +23,7 @@ let main argv =
 
     // Puzzle 05
     printfn "Puzzle 05 - Part 1: %d" Puzzle05.SolvePart1
-    printfn "Puzzle 05 - Part 2: %d" Puzzle05.SolvePart2
+    printfn "Puzzle 05 - Part 2: %s" Puzzle05.SolvePart2
     printfn "Puzzle 05 - Part 3: %d" Puzzle05.SolvePart3
 
     // End of program
