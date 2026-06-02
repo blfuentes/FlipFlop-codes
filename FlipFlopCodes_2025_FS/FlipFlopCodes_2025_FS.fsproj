@@ -34,6 +34,13 @@
 		<Content Include="puzzle04\input.txt">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<Compile Include="puzzle05\Puzzle05.fs" />
+		<Content Include="puzzle05\puzzle05_test.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="puzzle05\input.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 		<Compile Include="Program.fs" />
 	</ItemGroup>
 
