@@ -4,5 +4,6 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="FlipFlopCodes_2025_FS/FlipFlopCodes_2025_FS.fsproj" Id="f8860656-235e-4bb0-b12d-f15c3e206c1e" />
+  <Project Path="FlipFlopCodes_2026_FS/FlipFlopCodes_2026_FS.fsproj" Id="0dcf2616-8c13-4c71-aaea-e318960805d1" />
   <Project Path="FlipFlopCodes_Demo/FlipFlopCodes_Demo.fsproj" Id="61c90c89-f7fc-4430-b019-7d9994ee5bfd" />
 </Solution>
