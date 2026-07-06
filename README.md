@@ -9,11 +9,11 @@ https://flipflop.slome.org/
 
 | Year  | Progress | Score |
 | - | - | - |
-| [Demo](#Demo) | 🩴 | 3/3 |
-| [2025](#2025) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
-| [2026](#2026) | 🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 0/36 |
+| [Demo](#Demo Grandma's lost password) | 🩴 | 3/3 |
+| [2025](#2025 Dream Vacation) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
+| [2026](#2026 BitFlop Internship) | 🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 3/36 |
 
-### Demo
+### Demo Grandma's lost password
 https://flipflop.slome.org/2025/demo   
 🩴(1/1)
 
@@ -21,7 +21,7 @@ https://flipflop.slome.org/2025/demo
 |---------|----|
 | Demo [Grandma's lost password ~ Just average! ~ Credit card troubles!] | 🐾 [F#](./FlipFlopCodes_Demo/Program.fs) |
 
-### 2025
+### 2025 Dream Vacation
 
 [https://flipflop.slome.org/2025](https://flipflop.slome.org/2025)   
 🩴🩴🩴🩴🩴🩴🩴(7/7)
@@ -36,14 +36,14 @@ https://flipflop.slome.org/2025/demo
 | Puzzle 06 [Bird Spotters ~ Bird Marathon ~ Immortal Birds ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle06/Puzzle06.fs) |
 | Puzzle 07 [Hyper Grids ~ Stepping into the Third Dimension ~ Infinite Dimensions! ] | 🐾 [F#](./FlipFlopCodes_2025_FS/puzzle07/Puzzle07.fs) |
 
-### 2026
+### 2026 BitFlop Internship
 
 [https://flipflop.slome.org/2026](https://flipflop.slome.org/2026)   
-🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶(0/12)
+🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶(1/12)
 
 |Day      | Solution |
 |---------|----|
-| Puzzle 01 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle01/Puzzle01.fs) |
+| Puzzle 01 [Coffee Brewing ~ Perfect Temperatures ~ Preferences] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle01/Puzzle01.fs) |
 | Puzzle 02 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle02/Puzzle02.fs) |
 | Puzzle 03 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle03/Puzzle03.fs) |
 | Puzzle 04 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle04/Puzzle04.fs) |
