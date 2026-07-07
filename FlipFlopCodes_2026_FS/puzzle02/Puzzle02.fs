@@ -21,9 +21,7 @@ let SolvePart1 =
     let (pos, v) =
         temperatures
         |> Array.indexed
-        |> Array.maxBy(fun (idx, v)->
-            v
-        )
+        |> Array.maxBy snd
     (pos + 1) * v
 
 // Part 2
@@ -65,7 +63,5 @@ let SolvePart3 =
     let (pos, v) =
         temperatures
         |> Array.indexed
-        |> Array.maxBy(fun (idx, v)->
-            v
-        )
+        |> Array.maxBy snd
     (pos + 1) * v
