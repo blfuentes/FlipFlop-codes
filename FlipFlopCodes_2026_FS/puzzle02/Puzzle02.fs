@@ -10,11 +10,7 @@ let SolvePart1 =
     let temperatures = Array.zeroCreate<int> 100
     wallSegments
     |> Seq.fold(fun rIdx s->
-        let rIdx' =
-            match s with
-            | '>' -> (rIdx + 1) % 100
-            | '<' -> ((rIdx - 1) + 100) % 100
-            | _ -> failwith "invalid movement"
+        let rIdx' = ((rIdx + if s = '>' then 1 else -1) + 100) % 100
         temperatures[rIdx'] <- temperatures[rIdx'] + 1
         rIdx'
     ) 0 |> ignore
@@ -30,16 +26,8 @@ let SolvePart2 =
     let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
     let (_, _, count) =
         Seq.fold2(fun (lIdx, rIdx, count) ls rs->
-            let lIdx' =
-                match ls with
-                | '>' -> (lIdx + 1) % 100
-                | '<' -> ((lIdx - 1) + 100) % 100
-                | _ -> failwith "invalid movement"
-            let rIdx' =
-                match rs with
-                | '>' -> (rIdx + 1) % 100
-                | '<' -> ((rIdx - 1) + 100) % 100
-                | _ -> failwith "invalid movement"
+            let lIdx' = ((lIdx + if ls = '>' then 1 else -1) + 100) % 100
+            let rIdx' = ((rIdx + if rs = '>' then 1 else -1) + 100) % 100
             (lIdx', rIdx', if lIdx' = rIdx' then count + 1 else count)
         ) (0, 0, 0) wallSegmentsForLaser wallSegmentsForRobot
     count
@@ -51,12 +39,7 @@ let SolvePart3 =
     Seq.fold2(fun rIdx c shift ->
         let robot = if c = '>' then 1 else -1
         let shift' = if shift = '>' then -1 else 1
-        
-        let rIdx' =
-            match c with
-            | '>' -> (rIdx + robot + shift') % 100
-            | '<' -> ((rIdx + robot + shift') + 100) % 100
-            | _ -> failwith "invalid movement"
+        let rIdx' = ((rIdx + robot + shift') + 100) % 100
         temperatures[rIdx'] <- temperatures[rIdx'] + 1
         rIdx'
     ) 0 wallSegmentsForLaser wallSegmentsForRobot |> ignore
