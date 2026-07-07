@@ -6,12 +6,47 @@ open System.Collections.Generic
 
 // Part 1
 let SolvePart1 =
-    0
+    let wallSegments = ReadFileAsText false 2
+    let temperatures = Array.zeroCreate<int> 100
+    wallSegments
+    |> Seq.fold(fun rIdx s->
+        let rIdx' =
+            match s with
+            | '>' -> (rIdx + 1) % 100
+            | '<' -> ((rIdx - 1) + 100) % 100
+            | _ -> failwith "invalid movement"
+        temperatures[rIdx'] <- temperatures[rIdx'] + 1
+        rIdx'
+    ) 0 |> ignore
+    let (pos, v) =
+        temperatures
+        |> Array.indexed
+        |> Array.maxBy(fun (idx, v)->
+            v
+        )
+    (pos + 1) * v
 
 // Part 2
 let SolvePart2 =
-    0
-
+    let wallSegmentsForLaser = (ReadFileAsText false 2).ToCharArray()
+    let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
+    let (_, _, count) =
+        Seq.fold2(fun (lIdx, rIdx, count) ls rs->
+            let lIdx' =
+                match ls with
+                | '>' -> (lIdx + 1) % 100
+                | '<' -> ((lIdx - 1) + 100) % 100
+                | _ -> failwith "invalid movement"
+            let rIdx' =
+                match rs with
+                | '>' -> (rIdx + 1) % 100
+                | '<' -> ((rIdx - 1) + 100) % 100
+                | _ -> failwith "invalid movement"
+            (lIdx', rIdx', if lIdx' = rIdx' then count + 1 else count)
+        ) (0, 0, 0) wallSegmentsForLaser wallSegmentsForRobot
+    count
 // Part 3
 let SolvePart3 =
+    let wallSegmentsForLaser = (ReadFileAsText false 2).ToCharArray()
+    let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
     0
