@@ -11,7 +11,7 @@ https://flipflop.slome.org/
 | - | - | - |
 | [Demo](#Demo Grandma's lost password) | 🩴 | 3/3 |
 | [2025](#2025 Dream Vacation) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
-| [2026](#2026 BitFlop Internship) | 🩴👢🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 5/36 |
+| [2026](#2026 BitFlop Internship) | 🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 6/36 |
 
 ### Demo Grandma's lost password
 https://flipflop.slome.org/2025/demo   
@@ -39,7 +39,7 @@ https://flipflop.slome.org/2025/demo
 ### 2026 BitFlop Internship
 
 [https://flipflop.slome.org/2026](https://flipflop.slome.org/2026)   
-🩴👢🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶(1.66/12)
+🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶(2/12)
 
 |Day      | Solution |
 |---------|----|

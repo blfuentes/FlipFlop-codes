@@ -49,4 +49,23 @@ let SolvePart2 =
 let SolvePart3 =
     let wallSegmentsForLaser = (ReadFileAsText false 2).ToCharArray()
     let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
-    0
+    let temperatures = Array.zeroCreate<int> 100
+    Seq.fold2(fun rIdx c shift ->
+        let robot = if c = '>' then 1 else -1
+        let shift' = if shift = '>' then -1 else 1
+        
+        let rIdx' =
+            match c with
+            | '>' -> (rIdx + robot + shift') % 100
+            | '<' -> ((rIdx + robot + shift') + 100) % 100
+            | _ -> failwith "invalid movement"
+        temperatures[rIdx'] <- temperatures[rIdx'] + 1
+        rIdx'
+    ) 0 wallSegmentsForLaser wallSegmentsForRobot |> ignore
+    let (pos, v) =
+        temperatures
+        |> Array.indexed
+        |> Array.maxBy(fun (idx, v)->
+            v
+        )
+    (pos + 1) * v
