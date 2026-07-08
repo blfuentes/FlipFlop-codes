@@ -5,11 +5,14 @@ open LocalHelper
 let lowerCase = ['a'..'z']
 let upperCase = ['A'..'Z']
 let numbers = ['0'..'9']
+
 // strength part 1
 let containsLowerCase (pass: string) =
     if lowerCase |> Seq.exists(fun c -> pass.Contains c) then 1 else 0
+
 let containsUpperCase (pass: string) =
     if upperCase |> Seq.exists(fun c -> pass.Contains c) then 1 else 0
+
 let containsNumber (pass: string) =
     if numbers |> Seq.exists(fun c -> pass.Contains c) then 1 else 0
 
@@ -17,6 +20,7 @@ let containsNumber (pass: string) =
 let containstOnlyNumber7 (pass: string) =
     let validNumbers = ['0'; '1'; '2'; '3'; '4'; '5'; '6'; '8'; '9']  |> Set.ofSeq
     (Set.intersect (pass.ToCharArray() |> Set.ofArray) validNumbers).Count = 0 && pass.Contains('7')
+
 let moreThanThree (pass: string) =
     let mutable longestSoFar = 0    
     let mutable current = '%'
@@ -34,6 +38,7 @@ let moreThanThree (pass: string) =
         ]
     let max = repeats |> List.max
     if max > 2 then max else 0
+
 let containsRedGreenBlue (pass: string) =
     pass.Contains("red") || pass.Contains("green") || pass.Contains("blue")
 
@@ -57,10 +62,23 @@ let SolvePart2 =
             containsNumber pass + 
             sevenScore +
             moreThanThreeScore * moreThanThreeScore) * colorMultiplier * pass.Length
-    let scores = passwords |> Array.map(fun p -> (p, passwordStrengh p))
-    scores |> Seq.maxBy snd |> fst
-    //passwords |> Seq.maxBy passwordStrengh
+    passwords |> Seq.maxBy passwordStrengh
 
 // Part 3
 let SolvePart3 =
-    0
+    let passwords = ReadFileAsLines false 3
+    let passwordStrengh (pass: string) =
+        let sevenScore = if containstOnlyNumber7 pass then 7 else 0
+        let moreThanThreeScore = moreThanThree pass
+        let colorMultiplier = if containsRedGreenBlue pass then 3 else 1
+        (containsLowerCase pass + 
+            containsUpperCase pass + 
+            containsNumber pass + 
+            sevenScore +
+            moreThanThreeScore * moreThanThreeScore) * colorMultiplier * pass.Length
+    let scores append =
+        passwords |> Array.sumBy(fun p -> passwordStrengh (p+append))
+    
+    lowerCase @ upperCase @ numbers
+    |> Seq.map (fun c -> scores (c.ToString()))
+    |> Seq.max
