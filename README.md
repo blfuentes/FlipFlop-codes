@@ -11,7 +11,7 @@ https://flipflop.slome.org/
 | - | - | - |
 | [Demo](#Demo Grandma's lost password) | 🩴 | 3/3 |
 | [2025](#2025 Dream Vacation) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
-| [2026](#2026 BitFlop Internship) | 🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 6/36 |
+| [2026](#2026 BitFlop Internship) | 🩴🩴👢🦶🦶🦶🦶🦶🦶🦶🦶🦶 | 8/36 |
 
 ### Demo Grandma's lost password
 https://flipflop.slome.org/2025/demo   
@@ -39,13 +39,13 @@ https://flipflop.slome.org/2025/demo
 ### 2026 BitFlop Internship
 
 [https://flipflop.slome.org/2026](https://flipflop.slome.org/2026)   
-🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶🦶🦶(2/12)
+🩴🩴👢🦶🦶🦶🦶🦶🦶🦶🦶🦶(2.66/12)
 
 |Day      | Solution |
 |---------|----|
 | Puzzle 01 [Coffee Brewing ~ Perfect Temperatures ~ Preferences] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle01/Puzzle01.fs) |
 | Puzzle 02 [Lasering Walls ~ Hit The Target ~ Unjammed] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle02/Puzzle02.fs) |
-| Puzzle 03 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle03/Puzzle03.fs) |
+| Puzzle 03 [Password Competition ~ Not Sure If This Is That Strong ~ Auto-Complete] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle03/Puzzle03.fs) |
 | Puzzle 04 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle04/Puzzle04.fs) |
 | Puzzle 05 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle05/Puzzle05.fs) |
 | Puzzle 06 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle06/Puzzle06.fs) |
