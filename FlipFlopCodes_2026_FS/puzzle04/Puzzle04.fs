@@ -8,30 +8,22 @@ let SolvePart1 =
     let leftSide = plant |> Seq.map _.Substring(0, 1) |> Seq.toArray
     let rightSide = plant |> Seq.map _.PadRight(5).Substring(4,1) |> Seq.toArray
     let cutLevel = 400
-    let leaves =
-        (leftSide[..leftSide.Length-1 - cutLevel - 1] |> Array.filter(fun p -> p = "o") |> Array.length) +
-        (rightSide[..rightSide.Length-1 - cutLevel - 1] |> Array.filter(fun p -> p = "o") |> Array.length)
-    leaves  
+    (leftSide[..leftSide.Length - 2 - cutLevel] |> Array.filter(fun p -> p = "o") |> Array.length) +
+    (rightSide[..rightSide.Length - 2 - cutLevel] |> Array.filter(fun p -> p = "o") |> Array.length)
 
 // Part 2
 let SolvePart2 =
-    let plant = LocalHelper.ReadFileAsLines false 4
-    let leftSide = plant |> Seq.map _.Substring(0, 1) |> Seq.toArray
-    let rightSide = plant |> Seq.map _.PadRight(5).Substring(4,1) |> Seq.toArray
-    let mutable jumpIdx = plant.Length - 2
-    let mutable side = if leftSide[jumpIdx] = "o" then 0 else 1
-    let mutable jumps = 0
-    while jumpIdx > 2 do
-        match (side, leftSide[jumpIdx-1], rightSide[jumpIdx-1]) with
-        | (s, l, r) when s = 0 && r = "o" -> 
-            jumps <- jumps + 1
-            side <- 1
-        | (s, l, r) when s = 1 && l = "o" ->
-            jumps <- jumps + 1
-            side <- 0
-        | _ -> ignore()
-        jumpIdx <- jumpIdx - 1
-    jumps
+    let plant = 
+        [for line in LocalHelper.ReadFileAsLines false 4 |> Seq.skip 2 do
+            if line.StartsWith("o-|") then
+                yield -1
+            elif line.EndsWith("|-o") then
+                yield 1
+        ]
+    plant
+    |> Seq.pairwise
+    |> Seq.filter(fun (a, b) -> a <> b)
+    |> Seq.length   
 
 // Part 3
 let SolvePart3 =
