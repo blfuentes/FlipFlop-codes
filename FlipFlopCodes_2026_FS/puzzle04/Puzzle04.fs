@@ -35,7 +35,7 @@ let SolvePart2 =
 
 // Part 3
 let SolvePart3 =
-    let plant = LocalHelper.ReadFileAsLines true 4
+    let plant = LocalHelper.ReadFileAsLines false 4
     let leftSide = 
         plant 
         |> Seq.map _.Substring(0, 1) 
@@ -44,42 +44,43 @@ let SolvePart3 =
         plant 
         |> Seq.map _.PadRight(5).Substring(4,1) 
         |> Seq.toArray
-    let leftIdxes = Stack<int>()
-    let rightIdxes = Stack<int>()
-    leftSide
-        |> Array.indexed 
-        |> Array.iter(fun (i, v) -> if v = "o" then leftIdxes.Push(i) else ignore())
-    rightSide 
-        |> Array.indexed 
-        |> Array.iter(fun (i, v) -> if v = "o" then rightIdxes.Push(i) else ignore())
-
-    let mutable jumpIdx = plant.Length - 2
-    let mutable side = if leftSide[jumpIdx] = "o" then 0 else 1
+    
+    let consumed = HashSet<int>()
     let mutable workers = 0
-    while(leftIdxes.Count > 0 || rightIdxes.Count > 0) do
-        workers <- workers + 1
-        let (lIdx, rIdx) = (
-            (if leftIdxes.Count > 0 then leftIdxes.Peek() else -1), 
-            (if rightIdxes.Count > 0 then rightIdxes.Peek() else -1)
-            )
-        if lIdx > rIdx then 
-            side <- 0
-            jumpIdx <- leftIdxes.Pop()
-        else
-            side <- 1
-            jumpIdx <- rightIdxes.Pop()
-        while jumpIdx > 2 do
-            match (side, leftSide[jumpIdx-1], rightSide[jumpIdx-1]) with
-            | (s, l, r) when s = 0 && r = "o" ->                
-                side <- 1
-                jumpIdx <- if rightIdxes.Count > 0 then rightIdxes.Pop() else 2
+    let mutable (side, initJumpIdx) = (0, leftSide.Length - 2)
+    while initJumpIdx > 2 do
+        let mutable doJump = true
+        let firstLeft = leftSide |> Array.tryFindIndexBack(fun l -> l = "o")
+        let firstRight = rightSide |> Array.tryFindIndexBack(fun r -> r = "o")
+        let (s, i) =
+            match (firstLeft, firstRight) with
+            | (Some(a), Some(b)) when a > b -> (0, a)
+            | (Some(a), Some(b)) when a < b -> (1, b)
+            | (Some(a), None) -> (0, a)
+            | (None, Some(b)) -> (1, b)
+            | _ -> 
+                doJump <- false
+                (0, 0)
+        side <- s
+        initJumpIdx <- i
+
+        let mutable innerJumpIdx = initJumpIdx
+        let mutable lastJumpIdx = innerJumpIdx
+
+        while innerJumpIdx > 2 do
+            match (side, leftSide[innerJumpIdx - 1], rightSide[innerJumpIdx - 1]) with
+            | (s, l, r) when s = 0 && r = "o" ->
+                side <- 1 // jump to other side
+                leftSide[lastJumpIdx] <- "" // remove leaf
+                lastJumpIdx <- innerJumpIdx - 1
             | (s, l, r) when s = 1 && l = "o" ->
-                side <- 0
-                jumpIdx <- if leftIdxes.Count > 0 then leftIdxes.Pop() else 2
-            | _ ->
-                jumpIdx <- 
-                    if side = 0 then 
-                        if leftIdxes.Count > 0 then leftIdxes.Peek() else 2
-                    else 
-                        if rightIdxes.Count > 0 then rightIdxes.Peek() else 2
-    workers
+                side <- 0 // jump to other side
+                rightSide[lastJumpIdx] <- "" // remove leaf
+                lastJumpIdx <- innerJumpIdx - 1
+            | (s, l, r) when l = "o" || r = "o" ->
+                lastJumpIdx <- innerJumpIdx - 1 // stay in the same side jumping up
+            | _ -> ignore()
+            innerJumpIdx <- innerJumpIdx - 1
+        if side = 0 then leftSide[lastJumpIdx] <- "" else rightSide[lastJumpIdx] <- "" // remove last used leaf
+        if doJump then workers <- workers + 1 // worker jumped
+    workers    
