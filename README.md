@@ -11,7 +11,7 @@ https://flipflop.slome.org/
 | - | - | - |
 | [Demo](#Demo Grandma's lost password) | 🩴 | 3/3 |
 | [2025](#2025 Dream Vacation) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
-| [2026](#2026 BitFlop Internship) | 🩴🩴🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶 | 12/36 |
+| [2026](#2026 BitFlop Internship) | 🩴🩴🩴🩴👢🦶🦶🦶🦶🦶🦶🦶 | 14/36 |
 
 ### Demo Grandma's lost password
 https://flipflop.slome.org/2025/demo   
@@ -39,7 +39,7 @@ https://flipflop.slome.org/2025/demo
 ### 2026 BitFlop Internship
 
 [https://flipflop.slome.org/2026](https://flipflop.slome.org/2026)   
-🩴🩴🩴🩴🦶🦶🦶🦶🦶🦶🦶🦶(4/12)
+🩴🩴🩴🩴👢🦶🦶🦶🦶🦶🦶🦶(4.66/12)
 
 |Day      | Solution |
 |---------|----|
@@ -47,7 +47,7 @@ https://flipflop.slome.org/2025/demo
 | Puzzle 02 [Lasering Walls ~ Hit The Target ~ Unjammed] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle02/Puzzle02.fs) |
 | Puzzle 03 [Password Competition ~ Not Sure If This Is That Strong ~ Auto-Complete] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle03/Puzzle03.fs) |
 | Puzzle 04 [Magic Flowerstalk ~ Dizzy Jumping ~ Decaying Flower] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle04/Puzzle04.fs) |
-| Puzzle 05 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle05/Puzzle05.fs) |
+| Puzzle 05 [One Way City ~ Connections With The Mayor ~ Illegal Turnings] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle05/Puzzle05.fs) |
 | Puzzle 06 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle06/Puzzle06.fs) |
 | Puzzle 07 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle07/Puzzle07.fs) |
 | Puzzle 08 [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle08/Puzzle08.fs) |
