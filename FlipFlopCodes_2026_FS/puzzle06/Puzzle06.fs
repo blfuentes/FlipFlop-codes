@@ -89,6 +89,7 @@ let SolvePart1 =
     //                '.'
     //        printf "%c" symbol
     //    printfn ""
+
     let sortedLights =
         lights 
         |> Seq.sortBy(fun kvp -> kvp.Key)
@@ -114,7 +115,7 @@ let SolvePart1 =
         )
         |> Seq.filter ((<>) Off)
         |> Seq.map(fun l -> if l.IsHigh then "1" else "0")
-    System.Convert.ToInt64((String.concat "" sortedLights), 2)
+    System.Convert.ToUInt64((String.concat "" sortedLights), 2)
                 
 
 // Part 2
@@ -199,6 +200,7 @@ let SolvePart2 =
     //                '.'
     //        printf "%c" symbol
     //    printfn ""
+
     let sortedLights =
         lights 
         |> Seq.sortBy(fun kvp -> kvp.Key)
@@ -224,7 +226,7 @@ let SolvePart2 =
         )
         |> Seq.filter ((<>) Off)
         |> Seq.map(fun l -> if l.IsHigh then "1" else "0")
-    System.Convert.ToInt64((String.concat "" sortedLights), 2)
+    System.Convert.ToUInt64((String.concat "" sortedLights), 2)
 
 // Part 3
 let SolvePart3 =
@@ -299,7 +301,6 @@ let SolvePart3 =
                     gearsToRotate.Push((outputKey, outputBluetooth))
                     sections.TryAdd(outputKey, new HashSet<int*int>()) |> ignore
                     connectedbluetooths.Add (outputKey, p) |> ignore
-                    //sections[outputKey].Add pos |> ignore
                 | false ->
                     ignore()
             visited.Add pos |> ignore
@@ -309,31 +310,25 @@ let SolvePart3 =
         elif n = 2 then true
         elif n % 2 = 0 then false
         else
-            // Tail-recursive helper function
             let rec checkDivisor d =
                 if d * d > n then true
                 elif n % d = 0 then false
-                else checkDivisor (d + 2) // Skip even numbers
+                else checkDivisor (d + 2)
         
             checkDivisor 3     
 
 
     let disableSections = HashSet<char>()
-    //let enableSections = HashSet<char>()
-
     sections
     |> Seq.iter(fun kvp ->
         if isPrime kvp.Value.Count then
             disableSections.Add kvp.Key |> ignore
-        //else
-        //    enableSections.Add kvp.Key |> ignore
     )
 
     let mutable added = true
     while added do
         match connectedbluetooths |> Seq.tryFind(fun (f, t) -> disableSections.Contains t) with
         | Some (f, t) ->
-            //enableSections.Remove f |> ignore
             connectedbluetooths.Remove((f, t)) |> ignore
             added <- disableSections.Add f
         | None ->
@@ -393,4 +388,4 @@ let SolvePart3 =
         )
         |> Seq.filter ((<>) Off)
         |> Seq.map(fun l -> if l.IsHigh then "1" else "0")
-    System.Convert.ToInt64((String.concat "" sortedLights), 2)
+    System.Convert.ToUInt64((String.concat "" sortedLights), 2)
