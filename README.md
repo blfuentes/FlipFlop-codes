@@ -11,7 +11,7 @@ https://flipflop.slome.org/
 | - | - | - |
 | [Demo](#Demo Grandma's lost password) | 🩴 | 3/3 |
 | [2025](#2025 Dream Vacation) | 🩴🩴🩴🩴🩴🩴🩴 | 21/21 |
-| [2026](#2026 BitFlop Internship) | 🩴🩴🩴🩴🩴🩴🦶🦶🦶🦶🦶🦶 | 18/36 |
+| [2026](#2026 BitFlop Internship) | 🩴🩴🩴🩴🩴🩴🩴🦶🦶🦶🦶🦶 | 21/36 |
 
 ### Demo Grandma's lost password
 https://flipflop.slome.org/2025/demo   
@@ -39,7 +39,7 @@ https://flipflop.slome.org/2025/demo
 ### 2026 BitFlop Internship
 
 [https://flipflop.slome.org/2026](https://flipflop.slome.org/2026)   
-🩴🩴🩴🩴🩴🩴🦶🦶🦶🦶🦶🦶(6/12)
+🩴🩴🩴🩴🩴🩴🩴🦶🦶🦶🦶🦶(7/12)
 
 |Day      | Solution |
 |---------|----|
@@ -49,7 +49,7 @@ https://flipflop.slome.org/2025/demo
 | [Puzzle 04](https://flipflop.slome.org/2026/4)  [Magic Flowerstalk ~ Dizzy Jumping ~ Decaying Flower] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle04/Puzzle04.fs) |
 | [Puzzle 05](https://flipflop.slome.org/2026/5)  [One Way City ~ Connections With The Mayor ~ Illegal Turnings] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle05/Puzzle05.fs) |
 | [Puzzle 06](https://flipflop.slome.org/2026/6)  [Gears And Lights ~ Bluetooth Gears ~ In It's Prime] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle06/Puzzle06.fs) |
-| [Puzzle 07](https://flipflop.slome.org/2026/7)  [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle07/Puzzle07.fs) |
+| [Puzzle 07](https://flipflop.slome.org/2026/7)  [Ross's Pet Snake ~ Reminds Me Of A Certain Game ~ Unstoppable Force Meets Immovable Object] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle07/Puzzle07.fs) |
 | [Puzzle 08](https://flipflop.slome.org/2026/8)  [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle08/Puzzle08.fs) |
 | [Puzzle 09](https://flipflop.slome.org/2026/9)  [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle09/Puzzle09.fs) |
 | [Puzzle 10](https://flipflop.slome.org/2026/10) [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle10/Puzzle10.fs) |
