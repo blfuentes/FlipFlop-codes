@@ -1,8 +1,11 @@
 module Puzzle10
 
 open LocalHelper
+open System
 open System.Text.RegularExpressions
 open System.Collections.Generic
+open System.Threading
+open System.Threading.Tasks
 
 type Op =
 | Label
@@ -85,7 +88,7 @@ let buildOp (parts: string array) =
     (ins, arg1, arg2, arg3)
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let instructions = ReadFileAsLines false 10 |> Seq.mapi(fun i l -> (i, l.Split("ne")))
     let labels = Dictionary<int, int>()
     let operations = 
@@ -108,7 +111,7 @@ let SolvePart1 =
     registers[0]
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let instructions = ReadFileAsLines false 10 |> Seq.mapi(fun i l -> (i, l.Split("ne")))
     let labels = Dictionary<int, int>()
     let operations = 
@@ -140,5 +143,56 @@ let SolvePart2 =
     invalidReg0
 
 // Part 3
-let SolvePart3 =
-    0
+let SolvePart3 () =
+    let instructions = ReadFileAsLines false 10 |> Seq.mapi(fun i l -> (i, l.Split("ne")))
+    let labels = Dictionary<int, int>()
+    let operations = 
+        [
+            for (line, ins) in instructions do
+                if ins[0].StartsWith("be") then
+                    let dir = NumOfNas <| ins[0]
+                    labels.Add(dir, line)
+                    yield (Label, dir, None, None)
+                else
+                    yield buildOp ins
+        ] |> Array.ofList
+    
+    let r0Period = 16
+    let r1ValueCount = 16
+    let equivalentR0Values = 65536 / r0Period
+    let mutable invalidRepresentativeCombinations = 0
+    let parallelOptions = ParallelOptions(MaxDegreeOfParallelism = Environment.ProcessorCount)
+
+    Parallel.For<int>(
+        0,
+        r0Period,
+        parallelOptions,
+        (fun () -> 0),
+        (fun r0 _ localInvalidCombinations ->
+            let registers = Array.zeroCreate<uint16>(16)
+            let mutable invalidForR0 = 0
+
+            for r1 = 0 to r1ValueCount - 1 do
+                Array.Clear(registers, 0, registers.Length)
+                registers[0] <- uint16 r0
+                registers[1] <- uint16 r1
+
+                let mutable consumedInstructions = 0
+                let mutable opIdx = 0
+                while opIdx < operations.Length && consumedInstructions <= 5000000 do
+                    let (op, arg1, arg2, arg3) = operations[opIdx]
+                    if not op.IsLabel then
+                        consumedInstructions <- consumedInstructions + 1
+                    opIdx <- DoOp opIdx op (arg1, arg2, arg3) labels registers
+
+                if consumedInstructions > 5000000 then
+                    invalidForR0 <- invalidForR0 + 1
+
+            //printfn "Completed r0 residue=%d; invalid r1 values=%d" r0 invalidForR0
+            Console.Out.Flush()
+            localInvalidCombinations + invalidForR0),
+        (fun localInvalidCombinations ->
+            Interlocked.Add(&invalidRepresentativeCombinations, localInvalidCombinations) |> ignore))
+    |> ignore
+
+    invalidRepresentativeCombinations * equivalentR0Values

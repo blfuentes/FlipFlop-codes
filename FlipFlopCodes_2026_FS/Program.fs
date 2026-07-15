@@ -47,9 +47,9 @@ let main argv =
     printfn "Puzzle 09 - Part 3: %d" Puzzle09.SolvePart3
 
     // Puzzle 10
-    printfn "Puzzle 10 - Part 1: %d" Puzzle10.SolvePart1
-    printfn "Puzzle 10 - Part 2: %d" Puzzle10.SolvePart2
-    printfn "Puzzle 10 - Part 3: %d" Puzzle10.SolvePart3
+    printfn "Puzzle 10 - Part 1: %d" (Puzzle10.SolvePart1())
+    printfn "Puzzle 10 - Part 2: %d" (Puzzle10.SolvePart2())
+    printfn "Puzzle 10 - Part 3: %d" (Puzzle10.SolvePart3())
 
     // Puzzle 11
     printfn "Puzzle 11 - Part 1: %d" Puzzle11.SolvePart1
