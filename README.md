@@ -52,6 +52,6 @@ https://flipflop.slome.org/2025/demo
 | [Puzzle 07](https://flipflop.slome.org/2026/7)  [Ross's Pet Snake ~ Reminds Me Of A Certain Game ~ Unstoppable Force Meets Immovable Object] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle07/Puzzle07.fs) |
 | [Puzzle 08](https://flipflop.slome.org/2026/8)  [The Amazing Digital Stoats ~ The Power Of Stoat Friendship ~ Flash Forward] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle08/Puzzle08.fs) |
 | [Puzzle 09](https://flipflop.slome.org/2026/9)  [Thinking With Mazes ~ Do Not Look At The Operational End Of The Device ~ Thinking With Portals] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle09/Puzzle09.fs) |
-| [Puzzle 10](https://flipflop.slome.org/2026/10) [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle10/Puzzle10.fs) |
+| [Puzzle 10](https://flipflop.slome.org/2026/10) [The Banena™ Programming Language ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle10/Puzzle10.fs) |
 | [Puzzle 11](https://flipflop.slome.org/2026/11) [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle11/Puzzle11.fs) |
 | [Puzzle 12](https://flipflop.slome.org/2026/12) [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle12/Puzzle12.fs) |
