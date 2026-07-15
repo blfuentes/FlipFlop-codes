@@ -3,7 +3,7 @@ module Puzzle04
 open System.Collections.Generic
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let plant = LocalHelper.ReadFileAsLines false 4
     let leftSide = plant |> Seq.map _.Substring(0, 1) |> Seq.toArray
     let rightSide = plant |> Seq.map _.PadRight(5).Substring(4,1) |> Seq.toArray
@@ -12,7 +12,7 @@ let SolvePart1 =
     (rightSide[..rightSide.Length - 2 - cutLevel] |> Array.filter(fun p -> p = "o") |> Array.length)
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let plant = 
         [for line in LocalHelper.ReadFileAsLines false 4 |> Seq.skip 2 do
             if line.StartsWith("o-|") then
@@ -26,7 +26,7 @@ let SolvePart2 =
     |> Seq.length   
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let plant = LocalHelper.ReadFileAsLines false 4
     let leftSide = 
         plant 

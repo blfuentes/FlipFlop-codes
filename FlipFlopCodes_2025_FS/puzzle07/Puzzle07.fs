@@ -60,7 +60,7 @@ let countShortestPathsIn3D (grid: int[,,]) (startX: int) (startY: int) (startZ: 
 
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let grids = 
             LocalHelper.ReadFileAsLines false 7
             |> Seq.map(fun l -> int(l.Split(" ")[0]), int(l.Split(" ")[1]))
@@ -78,7 +78,7 @@ let SolvePart1 =
     |> List.sum        
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let grids = 
         LocalHelper.ReadFileAsLines false 7
         |> Seq.map(fun l -> int(l.Split(" ")[0]), int(l.Split(" ")[1]))
@@ -92,7 +92,7 @@ let SolvePart2 =
     |> List.sum
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let factorial (n: int) =
         let mutable result = bigint 1
         for i in 2..n do result <- result * bigint i

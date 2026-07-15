@@ -1,40 +1,40 @@
 ﻿[<EntryPoint>]
 let main argv =
     // Puzzle 01
-    printfn "Puzzle 01 - Part 1: %d" Puzzle01.SolvePart1
-    printfn "Puzzle 01 - Part 2: %d" Puzzle01.SolvePart2
-    printfn "Puzzle 01 - Part 3: %d" Puzzle01.SolvePart3
+    printfn "Puzzle 01 - Part 1: %d" (Puzzle01.SolvePart1())
+    printfn "Puzzle 01 - Part 2: %d" (Puzzle01.SolvePart2())
+    printfn "Puzzle 01 - Part 3: %d" (Puzzle01.SolvePart3())
 
 
     // Puzzle 02
-    printfn "Puzzle 02 - Part 1: %d" Puzzle02.SolvePart1
-    printfn "Puzzle 02 - Part 2: %d" Puzzle02.SolvePart2
-    printfn "Puzzle 02 - Part 3: %d" Puzzle02.SolvePart3
+    printfn "Puzzle 02 - Part 1: %d" (Puzzle02.SolvePart1())
+    printfn "Puzzle 02 - Part 2: %d" (Puzzle02.SolvePart2())
+    printfn "Puzzle 02 - Part 3: %d" (Puzzle02.SolvePart3())
 
     // Puzzle 03
-    printfn "Puzzle 03 - Part 1: %s" Puzzle03.SolvePart1
-    printfn "Puzzle 03 - Part 2: %d" Puzzle03.SolvePart2
-    printfn "Puzzle 03 - Part 3: %d" Puzzle03.SolvePart3
+    printfn "Puzzle 03 - Part 1: %s" (Puzzle03.SolvePart1())
+    printfn "Puzzle 03 - Part 2: %d" (Puzzle03.SolvePart2())
+    printfn "Puzzle 03 - Part 3: %d" (Puzzle03.SolvePart3())
 
     // Puzzle 04
-    printfn "Puzzle 04 - Part 1: %d" Puzzle04.SolvePart1
-    printfn "Puzzle 04 - Part 2: %d" Puzzle04.SolvePart2
-    printfn "Puzzle 04 - Part 3: %d" Puzzle04.SolvePart3
+    printfn "Puzzle 04 - Part 1: %d" (Puzzle04.SolvePart1())
+    printfn "Puzzle 04 - Part 2: %d" (Puzzle04.SolvePart2())
+    printfn "Puzzle 04 - Part 3: %d" (Puzzle04.SolvePart3())
 
     // Puzzle 05
-    printfn "Puzzle 05 - Part 1: %d" Puzzle05.SolvePart1
-    printfn "Puzzle 05 - Part 2: %s" Puzzle05.SolvePart2
-    printfn "Puzzle 05 - Part 3: %d" Puzzle05.SolvePart3
+    printfn "Puzzle 05 - Part 1: %d" (Puzzle05.SolvePart1())
+    printfn "Puzzle 05 - Part 2: %s" (Puzzle05.SolvePart2())
+    printfn "Puzzle 05 - Part 3: %d" (Puzzle05.SolvePart3())
 
     // Puzzle 06
-    printfn "Puzzle 06 - Part 1: %d" Puzzle06.SolvePart1
-    printfn "Puzzle 06 - Part 2: %d" Puzzle06.SolvePart2
-    printfn "Puzzle 06 - Part 3: %d" Puzzle06.SolvePart3
+    printfn "Puzzle 06 - Part 1: %d" (Puzzle06.SolvePart1())
+    printfn "Puzzle 06 - Part 2: %d" (Puzzle06.SolvePart2())
+    printfn "Puzzle 06 - Part 3: %d" (Puzzle06.SolvePart3())
 
     // Puzzle 07
-    printfn "Puzzle 07 - Part 1: %d" Puzzle07.SolvePart1
-    printfn "Puzzle 07 - Part 2: %d" Puzzle07.SolvePart2
-    printfn "Puzzle 07 - Part 3: %A" Puzzle07.SolvePart3
+    printfn "Puzzle 07 - Part 1: %d" (Puzzle07.SolvePart1())
+    printfn "Puzzle 07 - Part 2: %d" (Puzzle07.SolvePart2())
+    printfn "Puzzle 07 - Part 3: %A" (Puzzle07.SolvePart3())
 
     // End of program
     printfn "Press any key to exit..."

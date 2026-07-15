@@ -15,7 +15,7 @@ let calculateBirdPositionBig (x: int) (y: int) (vx: int) (vy: int) (time: int64)
     (int newX64, int newY64)
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let birdSpeeds = 
         LocalHelper.ReadFileAsLines false 6
         |> Seq.map (fun l -> (int(l.Split(",")[0]), int(l.Split(",")[1])))
@@ -34,7 +34,7 @@ let SolvePart1 =
     |> Seq.length
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let birdSpeeds = 
         LocalHelper.ReadFileAsLines false 6
         |> Seq.map (fun l -> (int(l.Split(",")[0]), int(l.Split(",")[1])))
@@ -54,7 +54,7 @@ let SolvePart2 =
     |> Seq.sumBy birdsOnHour
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let birdSpeeds = 
         LocalHelper.ReadFileAsLines false 6
         |> Seq.map (fun l -> (int(l.Split(",")[0]), int(l.Split(",")[1])))

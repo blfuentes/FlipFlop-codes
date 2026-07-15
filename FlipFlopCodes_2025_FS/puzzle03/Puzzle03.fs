@@ -3,7 +3,7 @@ module Puzzle03
 open LocalHelper
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let content = ReadFileAsLines false 3
     let colors = 
         content |> Seq.map(fun line ->
@@ -17,7 +17,7 @@ let SolvePart1 =
     |> Seq.head
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let content = ReadFileAsLines false 3
     let colors = 
         content |> Seq.map(fun line ->
@@ -37,7 +37,7 @@ let SolvePart2 =
     labeled.Item("Green") |> Seq.length
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let content = ReadFileAsLines false 3
     let colors = 
         content |> Seq.map(fun line ->

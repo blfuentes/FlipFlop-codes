@@ -17,7 +17,7 @@ type Cell = {
 }
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let input = ReadFileAsLines isTest 9
     maxRows <- input.Length
     maxCols <- input[0].Length
@@ -78,7 +78,7 @@ let SolvePart1 =
     path.Length - 1 // remove starting point      
 
 // Part 2
-let SolvePart2 = 
+let SolvePart2 () =
     let input = ReadFileAsLines isTest 9
     maxRows <- input.Length
     maxCols <- input[0].Length
@@ -150,7 +150,7 @@ let SolvePart2 =
     shortestPath |> Option.defaultValue -1
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let input = ReadFileAsLines isTest 9
     let rows = input.Length
     let cols = input[0].Length

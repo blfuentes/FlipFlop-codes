@@ -43,7 +43,7 @@ let containsRedGreenBlue (pass: string) =
     pass.Contains("red") || pass.Contains("green") || pass.Contains("blue")
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let passwords = ReadFileAsLines false 3
     let passwordStrengh (pass: string) =
         (containsLowerCase pass + containsUpperCase pass + containsNumber pass) * pass.Length
@@ -51,7 +51,7 @@ let SolvePart1 =
     passwords |> Seq.maxBy passwordStrengh
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let passwords = ReadFileAsLines false 3
     let passwordStrengh (pass: string) =
         let sevenScore = if containstOnlyNumber7 pass then 7 else 0
@@ -65,7 +65,7 @@ let SolvePart2 =
     passwords |> Seq.maxBy passwordStrengh
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let passwords = ReadFileAsLines false 3
     let passwordStrengh (pass: string) =
         let sevenScore = if containstOnlyNumber7 pass then 7 else 0

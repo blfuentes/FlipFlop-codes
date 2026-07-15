@@ -28,7 +28,7 @@ type Component = {
 }
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let content = LocalHelper.ReadFileAsLines false 6
     let (maxRows, maxCols) = (content.Length - 1, content[0].Length - 1)
     let mutable startGear = (0, 0)
@@ -119,7 +119,7 @@ let SolvePart1 =
                 
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let content = LocalHelper.ReadFileAsLines false 6
     let (maxRows, maxCols) = (content.Length - 1, content[0].Length - 1)
     let mutable startGear = (0, 0)
@@ -229,7 +229,7 @@ let SolvePart2 =
     System.Convert.ToUInt64((String.concat "" sortedLights), 2)
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let content = LocalHelper.ReadFileAsLines false 6
     let (maxRows, maxCols) = (content.Length - 1, content[0].Length - 1)
     let mutable startGear = (0, 0)

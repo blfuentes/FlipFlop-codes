@@ -23,7 +23,7 @@ let nextPos mov (fromRow, fromCol) =
     | _ -> failwith "invalid movement"
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let content = LocalHelper.ReadFileAsLines false 5
     let maxRows = content.Length
     let maxCols = content[0].Length
@@ -40,7 +40,7 @@ let SolvePart1 =
     countNonVisited (0, 0)
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let content = LocalHelper.ReadFileAsLines false 5
     let maxRows = content.Length
     let maxCols = content[0].Length
@@ -63,7 +63,7 @@ let SolvePart2 =
     ] |> Seq.max
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let content = LocalHelper.ReadFileAsLines false 5
     let maxRows = content.Length
     let maxCols = content[0].Length

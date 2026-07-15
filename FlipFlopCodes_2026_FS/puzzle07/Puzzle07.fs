@@ -6,7 +6,7 @@ let toConsume = if isTest then 20 else 2500
 let (startX, startY) = (0, 0)
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let input = LocalHelper.ReadFileAsLines isTest 7
     let instructions = input[0]
     let sushis = input[2..] |> Seq.map (fun l -> (int(l.Split(',')[0]), int(l.Split(',')[1]))) |> Array.ofSeq
@@ -25,7 +25,7 @@ let SolvePart1 =
     consumed
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let input = LocalHelper.ReadFileAsLines isTest 7
     let instructions = input[0]
     let sushis = input[2..] |> Seq.map (fun l -> (int(l.Split(',')[0]), int(l.Split(',')[1]))) |> Array.ofSeq
@@ -56,7 +56,7 @@ let SolvePart2 =
     eatTilDeath [(startX, startY)] (startX, startY) 0 0
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let input = LocalHelper.ReadFileAsLines isTest 7
     let instructions = input[0]
     let sushis = input[2..] |> Seq.map (fun l -> (int(l.Split(',')[0]), int(l.Split(',')[1]))) |> Array.ofSeq

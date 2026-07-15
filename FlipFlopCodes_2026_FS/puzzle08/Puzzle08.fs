@@ -7,7 +7,7 @@ open System.Text
 let isTest = false
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let rules = new Dictionary<string,string>()
     for l in ReadFileAsLines isTest 8 do
         rules.TryAdd(l[..0], l[1..].Replace(" ", "")) |> ignore
@@ -24,7 +24,7 @@ let SolvePart1 =
     
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let rules = new Dictionary<string,string>()
     for l in ReadFileAsLines isTest 8 do
         let cleaned = l.Replace(" ", "")
@@ -63,7 +63,7 @@ let SolvePart2 =
     generate "AB" 0 7
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let rules = new Dictionary<string,string>()
     for l in ReadFileAsLines isTest 8 do
         let cleaned = l.Replace(" ", "")

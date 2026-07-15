@@ -5,7 +5,7 @@ open LocalHelper
 open System.Collections.Generic
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let wallSegments = ReadFileAsText false 2
     let temperatures = Array.zeroCreate<int> 100
     wallSegments
@@ -21,7 +21,7 @@ let SolvePart1 =
     (pos + 1) * v
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let wallSegmentsForLaser = (ReadFileAsText false 2).ToCharArray()
     let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
     let (_, _, count) =
@@ -32,7 +32,7 @@ let SolvePart2 =
         ) (0, 0, 0) wallSegmentsForLaser wallSegmentsForRobot
     count
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let wallSegmentsForLaser = (ReadFileAsText false 2).ToCharArray()
     let wallSegmentsForRobot = wallSegmentsForLaser |> Array.rev
     let temperatures = Array.zeroCreate<int> 100

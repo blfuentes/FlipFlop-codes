@@ -3,7 +3,7 @@ module Puzzle01
 open LocalHelper
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     LocalHelper.ReadFileAsLines false 1 
     |> Seq.sumBy(fun t' ->
         let t = int(t')
@@ -12,7 +12,7 @@ let SolvePart1 =
     
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     LocalHelper.ReadFileAsLines false 1 
     |> Seq.sumBy(fun t' ->
         let t = int(t')
@@ -20,7 +20,7 @@ let SolvePart2 =
     )
 
 // Part 3
-let SolvePart3 =
+let SolvePart3 () =
     let input = LocalHelper.ReadFileAsLines false 1
     let (temperatures, desired) = (input[.. input.Length / 2 - 1], input[input.Length / 2..])
     temperatures

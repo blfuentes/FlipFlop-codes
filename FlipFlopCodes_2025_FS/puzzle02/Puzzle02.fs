@@ -5,7 +5,7 @@ open LocalHelper
 open System.Collections.Generic
 
 // Part 1
-let SolvePart1 =
+let SolvePart1 () =
     let content = ReadFileAsText false 2
     snd (content
     |> Seq.fold(fun (current, max') c ->
@@ -17,7 +17,7 @@ let SolvePart1 =
     ) (0, 0))
 
 // Part 2
-let SolvePart2 =
+let SolvePart2 () =
     let content = ReadFileAsText false 2
     let (_, _, _, maxlevel) = 
         content
@@ -48,7 +48,7 @@ let rec fib n =
         fibDict[n] <- result
         result
 
-let SolvePart3 =
+let SolvePart3 () =
     let content = ReadFileAsText false 2
     let (_, _, _, max') =
         content
