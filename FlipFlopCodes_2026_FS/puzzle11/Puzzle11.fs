@@ -72,6 +72,70 @@ let private energyByStem (allStems: HashSet<int * int>) =
 
     result
 
+let private runGeneration (roots: (Dictionary<int, Rule> * int) array) =
+    let trees =
+        roots
+        |> Array.map (fun (rules, rootX) ->
+            let sprouts = Queue<Rule * (int * int)>()
+            sprouts.Enqueue(rules[0], (rootX, 0))
+            {
+                Rules = rules
+                Sprouts = sprouts
+                Stems = HashSet<int * int>()
+                Age = 0
+                Alive = true
+            })
+
+    let occupied = HashSet<int * int>()
+    roots |> Array.iter (fun (_, rootX) -> occupied.Add((rootX, 0)) |> ignore)
+
+    while trees |> Array.exists _.Alive do
+        for tree in trees do
+            if tree.Alive then
+                let currentSprouts =
+                    [while tree.Sprouts.Count > 0 do
+                        yield tree.Sprouts.Dequeue()]
+
+                currentSprouts
+                |> List.iter (fun (_, position) -> tree.Stems.Add position |> ignore)
+
+                [for rule, (x, y) in currentSprouts do
+                    for child, position in [rule.Left, (x - 1, y); rule.Right, (x + 1, y); rule.Above, (x, y - 1)] do
+                        if child.IsSome && not (occupied.Contains position) then
+                            yield tree.Rules[child.Value.From], position]
+                |> List.groupBy snd
+                |> List.map (snd >> List.maxBy (fun (rule, _) -> rule.From))
+                |> List.iter (fun sprout ->
+                    tree.Sprouts.Enqueue sprout
+                    occupied.Add(snd sprout) |> ignore)
+
+                tree.Age <- tree.Age + 1
+
+        let allStems = HashSet<int * int>()
+        trees |> Array.iter (fun tree -> allStems.UnionWith tree.Stems)
+        let stemEnergy = energyByStem allStems
+
+        for tree in trees do
+            if tree.Alive then
+                let biologicalMass = tree.Stems.Count + tree.Sprouts.Count
+                let produced = tree.Stems |> Seq.sumBy (fun position -> stemEnergy[position])
+                let hasEnoughEnergy = tree.Age < 5 || produced >= biologicalMass * 3
+                tree.Alive <- tree.Age < 100 && hasEnoughEnergy
+
+    trees
+
+let private offspringRoots (trees: TreeState array) =
+    trees
+    |> Seq.collect (fun tree ->
+        tree.Sprouts
+        |> Seq.map (fun (_, (x, y)) -> tree.Rules, x, y))
+    |> Seq.groupBy (fun (_, x, _) -> x)
+    |> Seq.map (fun (x, column) ->
+        let rules, _, _ = column |> Seq.minBy (fun (_, _, y) -> y)
+        rules, x)
+    |> Seq.sortBy snd
+    |> Array.ofSeq
+
 // Part 1
 let SolvePart1 () =
     let growTree (tree: Dictionary<int, Rule>) =
@@ -116,57 +180,22 @@ let SolvePart1 () =
 
 // Part 2
 let SolvePart2 () =
-    let trees =
+    let roots =
         parseTrees false
-        |> Array.mapi (fun treeIndex rules ->
-            let sprouts = Queue<Rule * (int * int)>()
-            sprouts.Enqueue(rules[0], (treeIndex * 10, 0))
-            {
-                Rules = rules
-                Sprouts = sprouts
-                Stems = HashSet<int * int>()
-                Age = 0
-                Alive = true
-            })
+        |> Array.mapi (fun treeIndex rules -> rules, treeIndex * 10)
 
-    let occupied = HashSet<int * int>()
-    trees |> Array.iteri (fun treeIndex _ -> occupied.Add((treeIndex * 10, 0)) |> ignore)
-
-    while trees |> Array.exists _.Alive do
-        for tree in trees do
-            if tree.Alive then
-                let currentSprouts =
-                    [while tree.Sprouts.Count > 0 do
-                        yield tree.Sprouts.Dequeue()]
-
-                currentSprouts
-                |> List.iter (fun (_, position) -> tree.Stems.Add position |> ignore)
-
-                [for rule, (x, y) in currentSprouts do
-                    for child, position in [rule.Left, (x - 1, y); rule.Right, (x + 1, y); rule.Above, (x, y - 1)] do
-                        if child.IsSome && not (occupied.Contains position) then
-                            yield tree.Rules[child.Value.From], position]
-                |> List.groupBy snd
-                |> List.map (snd >> List.maxBy (fun (rule, _) -> rule.From))
-                |> List.iter (fun sprout ->
-                    tree.Sprouts.Enqueue sprout
-                    occupied.Add(snd sprout) |> ignore)
-
-                tree.Age <- tree.Age + 1
-
-        let allStems = HashSet<int * int>()
-        trees |> Array.iter (fun tree -> allStems.UnionWith tree.Stems)
-        let stemEnergy = energyByStem allStems
-
-        for tree in trees do
-            if tree.Alive then
-                let biologicalMass = tree.Stems.Count + tree.Sprouts.Count
-                let produced = tree.Stems |> Seq.sumBy (fun position -> stemEnergy[position])
-                let hasEnoughEnergy = tree.Age < 5 || produced >= biologicalMass * 3
-                tree.Alive <- tree.Age < 100 && hasEnoughEnergy
-
-    trees |> Array.sumBy (fun tree -> tree.Stems.Count + tree.Sprouts.Count)
+    runGeneration roots
+    |> Array.sumBy (fun tree -> tree.Stems.Count + tree.Sprouts.Count)
 
 // Part 3
 let SolvePart3 () =
-    0
+    let originalRoots =
+        parseTrees false
+        |> Array.mapi (fun treeIndex rules -> rules, treeIndex * 10)
+
+    let originalGeneration = runGeneration originalRoots
+    let offspringGeneration = originalGeneration |> offspringRoots |> runGeneration
+    let finalGeneration = offspringGeneration |> offspringRoots |> runGeneration
+
+    finalGeneration
+    |> Array.sumBy (fun tree -> tree.Stems.Count + tree.Sprouts.Count)
