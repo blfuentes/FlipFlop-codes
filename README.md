@@ -54,4 +54,4 @@ https://flipflop.slome.org/2025/demo
 | [Puzzle 09](https://flipflop.slome.org/2026/9)  [Thinking With Mazes ~ Do Not Look At The Operational End Of The Device ~ Thinking With Portals] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle09/Puzzle09.fs) |
 | [Puzzle 10](https://flipflop.slome.org/2026/10) [The Banena™ Programming Language ~ Halting Problem ~ That Was Just A Warmup] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle10/Puzzle10.fs) |
 | [Puzzle 11](https://flipflop.slome.org/2026/11) [Humongous Trees ~ Survival Of The Fittest ~ War Never Changes] | 🐾 [F#](./FlipFlopCodes_2026_FS/puzzle11/Puzzle11.fs) |
-| [Puzzle 12](https://flipflop.slome.org/2026/12) [ ~  ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle12/Puzzle12.fs) |
+| [Puzzle 12](https://flipflop.slome.org/2026/12) [Bingo Bango Bongo ~ Bingo Cube ~ ] | ❓ [F#](./FlipFlopCodes_2026_FS/puzzle12/Puzzle12.fs) |
